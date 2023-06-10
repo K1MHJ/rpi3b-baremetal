@@ -1,4 +1,4 @@
-CROSS_PREFIX=aarch64-linux-gnu-
+CROSS_PREFIX=$(CROSS_COMPILE)
 MAKEFILE_DIR:=$(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 BIN_DIR=$(MAKEFILE_DIR)../bin
 OBJ_DIR=$(MAKEFILE_DIR)../obj
