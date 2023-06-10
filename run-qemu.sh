@@ -1,12 +1,13 @@
-#!/bin/fish
+#!/bin/bash
 
+echo "Press \"Ctrl + a, c \" to Stop virtual app"
 echo "Press \"Ctrl + a, x \" to Close QEMU"
 pushd ./../
 qemu-system-aarch64 \
-  -M raspi3b\
-  -serial mon:stdio\
-  -kernel ./bin/boot.bin\
-  -d in_asm \
+  -M raspi3b \
+  -kernel ./bin/boot.bin \
+  -serial null \
+  -serial mon:stdio \
   -nographic
 popd
 
@@ -15,3 +16,10 @@ popd
 #  -serial stdio\
 #  -kernel ./bin/boot.elf\
 #  -serial mon:stdio\
+
+#qemu-system-aarch64 \
+#  -M raspi3b \
+#  -serial mon:stdio \
+#  -kernel ./bin/boot.bin \
+#  -d in_asm \
+#  -nographic
